@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Blunt Boot Index · 2026 FIFA World Cup</title>
+  <meta name="description" content="An index of shooting inefficiency at the 2026 FIFA World Cup, from official FIFA attacking statistics." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="masthead-titles">
+        <p class="eyebrow">Statistical Bulletin · 2026 FIFA World Cup</p>
+        <h1>The Blunt Boot Index</h1>
+      </div>
+      <p class="dateline" id="dateline"></p>
+    </div>
+  </header>
+
+  <section class="kpis wrap" id="kpis" aria-label="Tournament summary"></section>
+
+  <main class="wrap">
+    <section id="panel-shooting" class="panel">
+      <h2 class="sr-only">The goalless, by shot volume</h2>
+      <div class="panel-bar">
+        <span class="info" tabindex="0" role="note" aria-label="How the Index works"
+          data-tip="Only goalless attackers make the Index — players who have taken at least 3 shots at the 2026 World Cup without scoring. Ranked by shots taken, most first. On Target counts the goalless efforts that still forced a save or hit the frame. Figures are official FIFA attacking statistics.">?</span>
+        <label class="ctl">
+          <span>Position</span>
+          <select id="filter">
+            <option value="all">All positions</option>
+            <option value="FW">Forwards</option>
+            <option value="MF">Midfielders</option>
+            <option value="DF">Defenders</option>
+          </select>
+        </label>
+      </div>
+      <div class="table-scroll">
+        <table class="data" id="shootingTable">
+          <thead>
+            <tr>
+              <th class="col-rank" scope="col">#</th>
+              <th class="col-player sortable" data-key="name" scope="col">Player</th>
+              <th class="col-num sortable" data-key="ontarget" scope="col">On Target</th>
+              <th class="col-num sortable is-sorted desc" data-key="shots" scope="col">Shots, no goals</th>
+            </tr>
+          </thead>
+          <tbody id="shootingBody"></tbody>
+        </table>
+      </div>
+      <p id="shootingCount" class="count-note"></p>
+    </section>
+  </main>
+
+  <footer class="colophon wrap">
+    <h3>Methodology &amp; sources</h3>
+    <p id="methodology"></p>
+    <p id="sources"></p>
+    <p class="fineprint">
+      Built from the official FIFA World Cup 2026 attacking statistics export;
+      flags are the tournament crests from the same document. Goals are derived
+      from each player's conversion rate, so they may differ by one from other
+      trackers. A mid-tournament snapshot. Compiled in good faith and good humour.
+    </p>
+  </footer>
+
+  <script src="data/players.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
