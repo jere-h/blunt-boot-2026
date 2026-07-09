@@ -28,6 +28,7 @@
   var MAX_SHOTS = ALL.reduce(function (m, r) { return r.shots > m ? r.shots : m; }, 0) || 1;
 
   var POS_LABEL = { FW: "Forwards", MF: "Midfielders", DF: "Defenders", GK: "Goalkeepers" };
+  var VISIBLE_ROWS = 10;   // cap the table to 10 rows; the rest scroll inside the panel
   var sortKey = "shots", sortDir = -1, filter = "all";
 
   function passesFilter(r) { return filter === "all" || r.pos === filter; }
@@ -54,6 +55,22 @@
     if (!nation) return "";
     return '<img class="flag" src="img/flags/' + nation + '.png" alt="' + nation +
       '" loading="lazy" width="21" height="14" />';
+  }
+
+  // Keep the page short: show at most VISIBLE_ROWS rows and scroll the rest
+  // inside the panel (the sticky header stays put). Cleared when fewer rows show.
+  function capHeight() {
+    var scroll = document.querySelector("#panel-shooting .table-scroll");
+    var table = document.getElementById("shootingTable");
+    if (!scroll || !table || !table.tBodies[0]) return;
+    var rows = table.tBodies[0].rows;
+    if (rows.length <= VISIBLE_ROWS) { scroll.style.maxHeight = ""; return; }
+    // Measure with fractional rects so sub-pixel row heights don't clip row 10.
+    var headH = table.tHead ? table.tHead.getBoundingClientRect().height : 0;
+    var rowsH = rows[VISIBLE_ROWS - 1].getBoundingClientRect().bottom -
+      rows[0].getBoundingClientRect().top;
+    // +6: 2px borders + a 4px sliver of row 11 to signal the list scrolls.
+    scroll.style.maxHeight = Math.ceil(headH + rowsH) + 6 + "px";
   }
 
   function renderShooting() {
@@ -95,6 +112,8 @@
 
     note.textContent = rows.length + " goalless attacker" + (rows.length === 1 ? "" : "s") +
       (filter === "all" ? " with " + MIN_SHOTS + "+ shots" : " (" + (POS_LABEL[filter] || filter) + ")");
+
+    capHeight();
   }
 
   function wireSort() {
@@ -171,6 +190,8 @@
     });
     renderShooting();
     countUp();
+    window.addEventListener("resize", capHeight);
+    window.addEventListener("load", capHeight);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

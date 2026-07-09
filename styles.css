@@ -133,12 +133,13 @@ main { padding-top: 1.15rem; padding-bottom: 2rem; }
 .info:hover::after, .info:focus::after { opacity: 1; visibility: visible; transform: none; }
 
 /* ---- data tables --------------------------------------------------------- */
-.table-scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 14px; background: var(--card); box-shadow: var(--shadow-md); }
+.table-scroll { overflow: auto; border: 1px solid var(--rule); border-radius: 14px; background: var(--card); box-shadow: var(--shadow-md); }
 table.data { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 420px; table-layout: fixed; }
 table.data thead th {
   text-align: right; font-size: 0.67rem; letter-spacing: 0.07em; text-transform: uppercase;
   color: var(--muted); font-weight: 600; padding: 0.75rem 0.9rem;
   border-bottom: 1px solid var(--rule-strong); white-space: nowrap; background: var(--card-2); overflow: visible;
+  position: sticky; top: 0; z-index: 2;
 }
 table.data thead th.col-rank { text-align: right; width: 3.6rem; }
 table.data td.col-rank { overflow: visible; }
