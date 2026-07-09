@@ -13,7 +13,7 @@ window.BLUNT_BOOT_DATA = {
   as_of: "Official FIFA attacking statistics · cumulative through the knockout rounds",
   min_shots: 3,
   clinical_conv: 25,
-  sources: ["FIFA.com — official World Cup 2026 attacking player statistics", "khelnow / Yahoo Sports — own-goal register", "ESPN — Ronaldo knockout record"],
+  sources: ["FIFA.com — official 2026 FIFA World Cup attacking player statistics (Attempts at Goal, Attempts on Target, Conversion Rate)", "Team flags extracted from the same FIFA statistics document"],
   shooters: [
     {"name": "Lionel Messi", "nation": "ARG", "pos": "FW", "shots": 29, "ontarget": 18, "goals": 8, "conv": 28, "assists": 1, "headed": 0},
     {"name": "Kylian Mbappe", "nation": "FRA", "pos": "FW", "shots": 26, "ontarget": 17, "goals": 7, "conv": 27, "assists": 2, "headed": 0},
