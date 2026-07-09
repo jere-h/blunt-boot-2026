@@ -63,7 +63,7 @@ body {
 .dateline { margin: 0; font-size: 0.76rem; color: var(--faint); text-align: right; max-width: 26ch; font-style: normal; }
 
 /* ---- KPI tiles ----------------------------------------------------------- */
-.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; padding-top: 1.25rem; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; padding-top: 1.25rem; }
 .kpi {
   background: linear-gradient(160deg, var(--card-2), var(--card));
   border: 1px solid var(--rule); border-radius: 14px;
@@ -218,13 +218,26 @@ table.data--muted .p-name { color: var(--muted); font-weight: 600; }
 .fineprint { font-style: italic; color: var(--faint); }
 
 @media (max-width: 720px) {
-  .kpis { grid-template-columns: repeat(2, 1fr); }
   .kpi-num { font-size: 1.75rem; }
   .kpi-label { font-size: 0.78rem; }
 }
 @media (max-width: 560px) {
   .masthead-inner { flex-direction: column; align-items: flex-start; }
   .dateline { text-align: left; }
+
+  /* Mobile: drop the shot-magnitude bar and shrink the Shots column to just the
+     number, handing the reclaimed width to the player name so only the longest
+     names still truncate. The table no longer needs to scroll sideways. */
+  .table-scroll { overflow-x: visible; }
+  table.data { min-width: 0; }
+  table.data thead th, table.data tbody td { padding-left: 0.55rem; padding-right: 0.55rem; }
+  table.data thead th { white-space: normal; }
+  table.data thead th.col-rank { width: 2.4rem; }
+  table.data thead th.col-num { width: 4rem; }
+  table.data thead th[data-key="shots"], table.data td.col-shots { width: 4.4rem; }
+  .col-shots { min-width: 0; }
+  .shots-bar { display: none; }
+  .shots-val { margin: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .kpi, .reveal { animation: none; }

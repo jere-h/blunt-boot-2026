@@ -118,12 +118,10 @@
     var host = document.getElementById("kpis");
     var totalShots = ALL.reduce(function (s, r) { return s + (r.shots || 0); }, 0);
     var mostShots = ALL.reduce(function (m, r) { return r.shots > m ? r.shots : m; }, 0);
-    var onTarget = ALL.reduce(function (s, r) { return s + (r.ontarget || 0); }, 0);
     var tiles = [
-      { v: ALL.length, dp: 0, label: "Goalless attackers", sub: "shots, but no goals" },
+      { v: ALL.length, dp: 0, label: "Goalless attackers", sub: "with " + MIN_SHOTS + "+ shots, no goals" },
       { v: mostShots, dp: 0, label: "Most shots, no goal", sub: "the blunt-boot leader" },
-      { v: totalShots, dp: 0, label: "Shots, all wasted", sub: "not one found the net" },
-      { v: onTarget, dp: 0, label: "On target, still nothing", sub: "keepers and woodwork obliged" }
+      { v: totalShots, dp: 0, label: "Shots, all wasted", sub: "not one found the net" }
     ];
     tiles.forEach(function (t) {
       var el = document.createElement("div");
