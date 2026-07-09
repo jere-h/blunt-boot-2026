@@ -162,7 +162,9 @@ table.data tbody tr { transition: background 0.12s ease; }
 table.data tbody tr:hover td { background: var(--accent-soft); }
 .col-rank { color: var(--faint); font-size: 0.82rem; }
 .col-player { text-align: left !important; }
-.col-player { display: flex; align-items: center; gap: 0.6rem; }
+/* Flex layout (flag + name) is for the body cells only; a flex-display <th>
+   does not honour position: sticky, so the header must stay a table-cell. */
+table.data tbody td.col-player { display: flex; align-items: center; gap: 0.6rem; }
 .flag {
   flex: 0 0 auto; width: 21px; height: 14px; border-radius: 2px;
   object-fit: cover; box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35); background: var(--rule);
