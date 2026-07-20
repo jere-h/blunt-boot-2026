@@ -1,23 +1,25 @@
 /*
  * THE BLUNT BOOT INDEX — data file
  * Source: official FIFA World Cup 2026 player statistics (FIFA.com Player
- * Statistics, attacking view), refreshed 13 Jul 2026 from FIFA's public stats
- * feed — the same figures shown on the FIFA.com statistics page. Columns kept:
- * Attempts at Goal (shots), Attempts on Target, Conversion Rate %, Assists,
- * Headed attempts. Per the Index's remit this file now lists ONLY goalless
- * players (goals = 0, so conversion = 0) with at least min_shots attempts;
- * scorers are excluded at the data level. Flags (img/flags/<CODE>.png) are the
- * 48 team crests. Own-goal register + other inefficiencies are cross-sourced
- * (khelnow / Yahoo / ESPN).
+ * Statistics, attacking view). FINAL snapshot — refreshed 20 Jul 2026, the day
+ * after the final, covering all 104 matches. Spain are champions, beating
+ * Argentina 1–0 after extra time (Ferran Torres, 106'). Columns kept: Attempts
+ * at Goal (shots), Attempts on Target, Conversion Rate %, Assists, Headed
+ * attempts. Per the Index's remit this file lists ONLY goalless players
+ * (goals = 0, so conversion = 0) with at least min_shots attempts; scorers are
+ * excluded at the data level, so anyone who found the net in the closing rounds
+ * (e.g. Ferran Torres, Bukayo Saka, Declan Rice, Anthony Gordon) has dropped
+ * off. Flags (img/flags/<CODE>.png) are the 48 team crests. Own-goal register +
+ * other inefficiencies are cross-sourced (khelnow / Yahoo / ESPN).
  */
 window.BLUNT_BOOT_DATA = {
   competition: "2026 FIFA World Cup",
-  as_of: "Official FIFA player statistics \u00b7 cumulative through the quarter-finals (100 of 104 matches)",
+  as_of: "Official FIFA player statistics \u00b7 final \u2014 all 104 matches complete \u00b7 Spain champions (def. Argentina 1\u20130 a.e.t.)",
   min_shots: 3,
   clinical_conv: 25,
   sources: ["FIFA.com \u2014 official 2026 FIFA World Cup player statistics (Attempts at Goal, Attempts on Target, Conversion Rate)", "Team flags extracted from the same FIFA statistics document"],
   shooters: [
-    {"name": "Michael Olise", "nation": "FRA", "pos": "FW", "shots": 17, "ontarget": 5, "goals": 0, "conv": 0, "assists": 5, "headed": 0},
+    {"name": "Michael Olise", "nation": "FRA", "pos": "FW", "shots": 20, "ontarget": 5, "goals": 0, "conv": 0, "assists": 7, "headed": 0},
     {"name": "Gustavo Puerta", "nation": "COL", "pos": "DF", "shots": 14, "ontarget": 5, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Kenan Yildiz", "nation": "TUR", "pos": "FW", "shots": 14, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Ibrahim Maza", "nation": "ALG", "pos": "MF", "shots": 11, "ontarget": 3, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
@@ -26,7 +28,6 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Enner Valencia", "nation": "ECU", "pos": "FW", "shots": 10, "ontarget": 6, "goals": 0, "conv": 0, "assists": 0, "headed": 2},
     {"name": "Maxim De Cuyper", "nation": "BEL", "pos": "DF", "shots": 10, "ontarget": 6, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Federico Valverde", "nation": "URU", "pos": "MF", "shots": 10, "ontarget": 2, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
-    {"name": "Ferran Torres", "nation": "ESP", "pos": "FW", "shots": 10, "ontarget": 2, "goals": 0, "conv": 0, "assists": 1, "headed": 3},
     {"name": "Dani Olmo", "nation": "ESP", "pos": "FW", "shots": 10, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 1},
     {"name": "Florian Wirtz", "nation": "GER", "pos": "MF", "shots": 10, "ontarget": 1, "goals": 0, "conv": 0, "assists": 3, "headed": 0},
     {"name": "Bruno Fernandes", "nation": "POR", "pos": "MF", "shots": 9, "ontarget": 3, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
@@ -34,7 +35,6 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Martin Odegaard", "nation": "NOR", "pos": "MF", "shots": 9, "ontarget": 3, "goals": 0, "conv": 0, "assists": 4, "headed": 0},
     {"name": "Luis Suarez", "nation": "COL", "pos": "FW", "shots": 9, "ontarget": 0, "goals": 0, "conv": 0, "assists": 1, "headed": 2},
     {"name": "Tani Oluwaseyi", "nation": "CAN", "pos": "FW", "shots": 8, "ontarget": 4, "goals": 0, "conv": 0, "assists": 0, "headed": 2},
-    {"name": "Bukayo Saka", "nation": "ENG", "pos": "FW", "shots": 8, "ontarget": 3, "goals": 0, "conv": 0, "assists": 3, "headed": 1},
     {"name": "John Yeboah", "nation": "ECU", "pos": "FW", "shots": 8, "ontarget": 3, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Scott Mctominay", "nation": "SCO", "pos": "MF", "shots": 8, "ontarget": 3, "goals": 0, "conv": 0, "assists": 0, "headed": 3},
     {"name": "Bruno Guimaraes", "nation": "BRA", "pos": "MF", "shots": 8, "ontarget": 2, "goals": 0, "conv": 0, "assists": 4, "headed": 1},
@@ -70,7 +70,6 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Rodri", "nation": "ESP", "pos": "MF", "shots": 6, "ontarget": 0, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
     {"name": "Ryan Mendes", "nation": "CPV", "pos": "FW", "shots": 6, "ontarget": 0, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Mateo Kovacic", "nation": "CRO", "pos": "MF", "shots": 5, "ontarget": 4, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
-    {"name": "Anthony Gordon", "nation": "ENG", "pos": "FW", "shots": 5, "ontarget": 3, "goals": 0, "conv": 0, "assists": 3, "headed": 2},
     {"name": "Alistair Johnston", "nation": "CAN", "pos": "DF", "shots": 5, "ontarget": 2, "goals": 0, "conv": 0, "assists": 0, "headed": 2},
     {"name": "Chris Wood", "nation": "NZL", "pos": "FW", "shots": 5, "ontarget": 2, "goals": 0, "conv": 0, "assists": 2, "headed": 2},
     {"name": "Denis Zakaria", "nation": "SUI", "pos": "MF", "shots": 5, "ontarget": 2, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
@@ -103,7 +102,7 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Ermedin Demirovic", "nation": "BIH", "pos": "FW", "shots": 4, "ontarget": 4, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Callum Mccowatt", "nation": "NZL", "pos": "MF", "shots": 4, "ontarget": 3, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
     {"name": "Evidence Makgopa", "nation": "RSA", "pos": "FW", "shots": 4, "ontarget": 3, "goals": 0, "conv": 0, "assists": 0, "headed": 2},
-    {"name": "Marc Cucurella", "nation": "ESP", "pos": "DF", "shots": 4, "ontarget": 3, "goals": 0, "conv": 0, "assists": 2, "headed": 1},
+    {"name": "Marc Cucurella", "nation": "ESP", "pos": "DF", "shots": 5, "ontarget": 3, "goals": 0, "conv": 0, "assists": 2, "headed": 1},
     {"name": "Oscar Bobb", "nation": "NOR", "pos": "MF", "shots": 4, "ontarget": 3, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Christian Pulisic", "nation": "USA", "pos": "FW", "shots": 4, "ontarget": 2, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Diney Borges", "nation": "CPV", "pos": "DF", "shots": 4, "ontarget": 2, "goals": 0, "conv": 0, "assists": 0, "headed": 3},
@@ -115,10 +114,9 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Tijjani Reijnders", "nation": "NED", "pos": "MF", "shots": 4, "ontarget": 2, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Aleksandar Pavlovic", "nation": "GER", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Ali Jasim", "nation": "IRQ", "pos": "FW", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
-    {"name": "Aymeric Laporte", "nation": "ESP", "pos": "DF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 2},
+    {"name": "Aymeric Laporte", "nation": "ESP", "pos": "DF", "shots": 5, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 2},
     {"name": "Can Uzun", "nation": "TUR", "pos": "FW", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Cristian Volpato", "nation": "AUS", "pos": "FW", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
-    {"name": "Declan Rice", "nation": "ENG", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 1},
     {"name": "Lee Kangin", "nation": "KOR", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Marawan Attia", "nation": "EGY", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Mario Pasalic", "nation": "CRO", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
@@ -126,7 +124,7 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Mohamed Toure", "nation": "AUS", "pos": "FW", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
     {"name": "Moises Caicedo", "nation": "ECU", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
     {"name": "Oswin Appollis", "nation": "RSA", "pos": "FW", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
-    {"name": "Pedri", "nation": "ESP", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
+    {"name": "Pedri", "nation": "ESP", "pos": "MF", "shots": 5, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Pedro Vite", "nation": "ECU", "pos": "MF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 1, "headed": 0},
     {"name": "Ricardo Ade", "nation": "HAI", "pos": "DF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 2},
     {"name": "Ruben Providence", "nation": "HAI", "pos": "FW", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
@@ -179,7 +177,7 @@ window.BLUNT_BOOT_DATA = {
     {"name": "Luc De Fougerolles", "nation": "CAN", "pos": "DF", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
     {"name": "Manuel Ugarte", "nation": "URU", "pos": "MF", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Micky Van De Ven", "nation": "NED", "pos": "DF", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 2},
-    {"name": "Pau Cubarsi", "nation": "ESP", "pos": "DF", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
+    {"name": "Pau Cubarsi", "nation": "ESP", "pos": "DF", "shots": 4, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 1},
     {"name": "Pedro Miguel", "nation": "QAT", "pos": "DF", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Relebohile Mofokeng", "nation": "RSA", "pos": "FW", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
     {"name": "Salem Aldawsari", "nation": "KSA", "pos": "FW", "shots": 3, "ontarget": 1, "goals": 0, "conv": 0, "assists": 0, "headed": 0},
@@ -235,6 +233,6 @@ window.BLUNT_BOOT_DATA = {
   other: [
     {"name": "Vinícius Júnior", "nation": "BRA", "metric": "Failed dribbles", "value": "9 attempted, 0 completed", "note": "The most dribbles attempted without a single success in the group stage."},
     {"name": "Cristiano Ronaldo", "nation": "POR", "metric": "Knockout drought", "value": "0 knockout goals", "note": "Scored in six straight World Cups, yet never in a knockout tie for Portugal."},
-    {"name": "Erling Haaland & Kylian Mbappé", "nation": "NOR / FRA", "metric": "Big chances missed", "value": "5 each", "note": "Joint-most clear openings spurned at the tournament."},
+    {"name": "Michael Olise", "nation": "FRA", "metric": "Assists without a goal", "value": "7 assists, 20 shots, 0 goals", "note": "Set the single-tournament World Cup assist record, yet fired 20 shots without scoring once — the Index's definitive blunt boot."},
   ]
 };

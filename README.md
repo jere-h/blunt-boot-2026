@@ -16,5 +16,7 @@ actually scored, goals floored at 1, minimum 6 shots).
   `index.html` and it works offline.
 
 ## Data caveats
-Numbers are a mid-tournament snapshot and may lag the latest match. Appearances
-marked `*` are estimated from the team's exit round. All in good fun.
+Numbers are the **final, full-tournament snapshot** — all 104 matches, with
+Spain champions (beat Argentina 1–0 a.e.t. in the final). Players who scored in
+the closing rounds (Ferran Torres, Bukayo Saka, Declan Rice, Anthony Gordon…)
+have dropped off the goalless list. All in good fun.
